@@ -11,14 +11,11 @@
    Usage:
 
    - $(selector).fancyDropdown(); //returns jQuery chainable object
-   
-   Prerequisites:
-   
-   - jQuery hasEventListener plugin by sebastien-p: https://github.com/sebastien-p/jquery.hasEventListener
 
 */
 
 (function($) {
+	var private = {};
  	$.fn.fancyDropdown = function() {
 		return this.each(function() {
 			var el = $(this);
@@ -43,8 +40,9 @@
 			initoption.attr('class', 'active');
 			$('#'+id+'_dropdown').attr('data-realvalue', initoption.attr('data-realvalue')).html(initoption.html());
 			//bind click event
-			if ($('body').hasEventListener("click.customdropdown").length == 0) {
+			if (private.bound_click_customdropdown === undefined) {
 				//bind the click event only once
+				private.bound_click_customdropdown = true;
 				$('body').bind('click.customdropdown', function(e) {
 					var elements = $(e.target).parents().andSelf();
 					var dropdown = elements.filter('.dropdown');
