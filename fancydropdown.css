@@ -1,0 +1,89 @@
+.dropdown {
+	border: 1px solid #B1BDC8;
+	border-bottom-color: #ABB8C5;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	background: #F0F2F3 url(dropdown_bg.png) repeat-x left top;
+	padding: 2px;
+	height: 35px;
+	cursor: pointer;
+}
+
+.hover_dropdown {
+	border-color: #f1ca58 #f4d053 #f7d84b #f4d053;
+	background: #F0F2F3 url(dropdownlist_hover_bg.png) repeat-x left top;
+}
+
+.active_dropdown {
+	border-color: #c2762b #c28838 #c29e47 #c28636;
+	background: #F0F2F3 url(active_dropdown_bg.png) repeat-x left top;
+}
+
+.dropdownlist {
+	list-style: none;
+	border: 1px solid #A7ABB0;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	padding: 1px;
+	cursor: pointer;
+	background-color: #FFF;
+	-webkit-box-shadow: 2px 2px 5px #D8D8D8;
+	-moz-box-shadow: 2px 2px 5px #D8D8D8;
+	box-shadow: 2px 2px 5px #D8D8D8;
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=135, Color='#D8D8D8');
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+.dropdownlist li {
+	border-width: 0px;
+	padding: 2px;
+}
+
+.dropdownlist li.active img {
+	background: transparent url(dropdownlist_active_img_bg.png) no-repeat left top;
+}
+
+.dropdownlist li.hover {
+	border: 1px solid white;
+	border-color: #f1ca58 #f4d053 #f7d84b #f4d053;
+	-moz-border-radius: 2px;
+	-o-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	background: #F0F2F3 url(dropdownlist_hover_bg.png) repeat-x left top;
+	padding: 1px;
+}
+
+.dropdown .imgholder, .dropdownlist .imgholder {
+	float: left;
+	width: 33px;
+	height: 33px;
+	padding: 1px;
+	margin-right: 2px;
+}
+
+.dropdown p, .dropdownlist p {
+	margin: 2px 4px 0px 2px;
+	color: #8A8A8A;
+	height: 31px;
+}
+
+.dropdown p.no-info, .dropdownlist p.no-info {
+	height: 23px;
+	padding: 8px 0 0 0;
+}
+
+.dropdown p {
+	background: url(arrowhead_down.png) no-repeat right 14px;
+}
+
+.dropdown p strong, .dropdown_no-info p strong, .dropdownlist p strong {
+	color: #262626;
+}
