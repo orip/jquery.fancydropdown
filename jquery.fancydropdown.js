@@ -20,7 +20,7 @@
 		return this.each(function() {
 			var el = $(this);
 			var id = $(this).attr('id');
-			el.hide();
+			el.css({'position': 'absolute', 'left': '-999em'});
 			//create needed HTML
 			var html = '<div class="dropdown" id="'+id+'_dropdown"></div><ul class="dropdownlist" id="'+id+'_dropdownlist">';
 			$('option', el).each(function() {
@@ -43,7 +43,7 @@
 			if (private.bound_click_customdropdown === undefined) {
 				//bind the click event only once
 				private.bound_click_customdropdown = true;
-				$('body').bind('click.customdropdown', function(e) {
+				$('body').bind('click.customdropdown touchstart', function(e) {
 					var elements = $(e.target).parents().andSelf();
 					var dropdown = elements.filter('.dropdown');
 					var dropdownlist = elements.filter('.dropdownlist');
@@ -81,6 +81,7 @@
 							$(dropdownlist[0]).fadeOut('fast');
 							//reflect change to original <select> element
 							$("#"+dropdownid.slice(0, -9)).val(li.attr('data-realvalue'));
+							e.preventDefault();							
 						}
 					}
 				});
